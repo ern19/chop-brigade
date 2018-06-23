@@ -20,8 +20,14 @@ module.exports = {
                   path: `${__dirname}/src/`
                 }
               },
+              {
+                resolve: 'gatsby-transformer-remark',
+                options: {
+                  excerpt_separator: `<!--end-->`,
+                }
+              },
               'gatsby-transformer-sharp',
               'gatsby-plugin-sharp',
-              'gatsby-transformer-remark'
+              
            ],
 }

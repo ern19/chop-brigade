@@ -9,7 +9,7 @@ const HeaderWrapper = styled.div`
   margin-bottom: 1.45rem;
   overflow: hidden;
   position: relative;
-  height: 70vh;
+  height: 40vh;
   h1 {
     img {
       height: 80px;
