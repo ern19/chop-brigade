@@ -1,6 +1,10 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Default Starter',
+    title: 'Charge of the Chop Brigade',
+    desc: 'A Blog About the Braves, And Other Things'
   },
-  plugins: ['gatsby-plugin-react-helmet'],
+  plugins: [
+              'gatsby-plugin-react-helmet',
+              'gatsby-plugin-styled-components'
+           ],
 }
