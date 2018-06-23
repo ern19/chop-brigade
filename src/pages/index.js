@@ -22,12 +22,18 @@ query SiteMeta {
       desc
     }
   }
-	allMarkdownRemark {
+	allMarkdownRemark(sort: {
+    fields: [frontmatter___date],
+    order: DESC
+  }) {
     edges {
       node {
       	frontmatter {
           title
           date(formatString: "MMM DD YYYY")
+        }
+        fields {
+          slug
         }
         html
         excerpt
