@@ -42,5 +42,10 @@ export const query = graphql`
         desc
       }
     }
+    background: imageSharp(id: {regex: "/light_brigade.jpg/"}) {
+      sizes(maxWidth: 1240) {
+        ...GatsbyImageSharpSizes
+      }
+    }
   }
 `
