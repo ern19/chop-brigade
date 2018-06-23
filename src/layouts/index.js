@@ -1,9 +1,15 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-
+import styled from 'styled-components'
 import Header from '../components/header'
 import './index.css'
+
+const Footer = styled.footer`
+  text-align: center;
+  color: rgba(166,73,84,0.6);
+  font-size: 12px;
+`
 
 const Layout = ({ children, data, location }) => (
   <div>
@@ -25,6 +31,7 @@ const Layout = ({ children, data, location }) => (
     >
       {children()}
     </div>
+    <Footer>Thanks to Scott Tolinski @ LevelUp Tutorials</Footer>
   </div>
 )
 
