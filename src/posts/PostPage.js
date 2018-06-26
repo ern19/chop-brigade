@@ -18,7 +18,7 @@ export default class componentName extends Component {
 }
 
 export const query = graphql`
-	query BlogPostQuery {
+	query BlogPostQuery($slug: String!) {
     contentfulBlogPost(slug: {eq: $slug }) {
       title
       body {
