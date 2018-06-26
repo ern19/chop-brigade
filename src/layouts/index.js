@@ -14,7 +14,7 @@ const Footer = styled.footer`
 const Layout = ({ children, data, location }) => (
   <div>
     <Helmet
-      title={data.site.siteMetadata.title}
+      title="{data.site.siteMetadata.title}"
       meta={[
         { name: 'description', content: 'Sample' },
         { name: 'keywords', content: 'sample, something' },

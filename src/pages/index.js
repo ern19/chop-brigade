@@ -6,7 +6,7 @@ const IndexPage = ({data}) => (
   <div>
     <p>{data.site.siteMetadata.title}</p>
     <p>{data.site.siteMetadata.desc}</p>
-    {data.allMarkdownRemark.edges.map(({node}) => 
+    {data.allContentfulBlogPost.edges.map(({node}) => 
        <PostListing key={node.id} post={node}/>
     )}    
   </div>
@@ -21,22 +21,21 @@ query SiteMeta {
       title
       desc
     }
-  }
-	allMarkdownRemark(sort: {
-    fields: [frontmatter___date],
-    order: DESC
-  }) {
+  }	
+  allContentfulBlogPost {
     edges {
       node {
-      	frontmatter {
-          title
-          date(formatString: "MMM DD YYYY")
+        title
+        body {
+          childMarkdownRemark {
+            excerpt
+          }
+          id
+  				body
         }
-        fields {
-          slug
-        }
-        html
-        excerpt
+        createdAt(formatString: "MMMM DD, YYYY")
+        slug
+        id
       }
     }
   }
