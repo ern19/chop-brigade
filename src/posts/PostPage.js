@@ -19,7 +19,7 @@ export default class componentName extends Component {
 
 export const query = graphql`
 	query BlogPostQuery {
-    contentfulBlogPost(slug: {eq:"first-contentful-post" }) {
+    contentfulBlogPost(slug: {eq: $slug }) {
       title
       body {
         childMarkdownRemark {
