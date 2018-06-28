@@ -9,6 +9,11 @@ const Thumbnail = styled.img`
 `
 const BlogArticle = styled.article`
   display: flex;
+  padding: 5px;
+  box-shadow: 5px 2px 5px 2px #ccc;
+  &:hover {
+    box-shadow: 8px 4px 8px 4px #ccc;
+  }
 `
 
 const PostListing = ({post}) => <BlogArticle>
