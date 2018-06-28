@@ -14,8 +14,11 @@ const HeaderWrapper = styled.div`
     isHome ? '60vh' : '20vh'
   )};
   h1 {
+    display: flex;
+    color: white;
     img {
-      height: 80px;
+      height: 40px;
+      padding-right: 10px;
     }
   }
 `
@@ -44,6 +47,9 @@ const MainNav = styled.nav`
       }
     }
   }
+`
+const StyledLogo = styled(Logo)`
+  
 `
 
 
@@ -87,6 +93,7 @@ export default class Header extends Component {
             >
               <img src={Logo} alt="Braves logo"/>
             </Link>
+            Charge of the Chop Brigade
           </h1>      
           <MainNav>
             <ul>
@@ -94,7 +101,7 @@ export default class Header extends Component {
                 <Link to="/">Home</Link>
               </li>
               <li>
-                <Link to="/about">About us</Link>
+                <Link to="/about">About Me</Link>
               </li>
             </ul>
           </MainNav>

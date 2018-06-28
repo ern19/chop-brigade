@@ -4,8 +4,6 @@ import PostListing from '../components/Posts/PostListing'
 
 const IndexPage = ({data}) => (
   <div>
-    <p>{data.site.siteMetadata.title}</p>
-    <p>{data.site.siteMetadata.desc}</p>
     {data.allContentfulBlogPost.edges.map(({node}) => 
        <PostListing key={node.id} post={node}/>
     )}    
@@ -25,6 +23,11 @@ query SiteMeta {
   allContentfulBlogPost {
     edges {
       node {
+        thumbnail {
+          file {
+            url
+          }
+        }
         title
         body {
           childMarkdownRemark {

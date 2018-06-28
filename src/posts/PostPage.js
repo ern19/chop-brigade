@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Img from 'gatsby-image'
 
 export default class componentName extends Component {
   render() {
@@ -6,7 +7,7 @@ export default class componentName extends Component {
 
     return (
       <div>
-        <span>{data.contentfulBlogPost.data}</span>
+        <span>{data.contentfulBlogPost.createdAt}</span>
         <h1>{data.contentfulBlogPost.title}</h1>
         <div dangerouslySetInnerHTML={{
           __html: data.contentfulBlogPost.body.childMarkdownRemark.html
@@ -21,6 +22,12 @@ export const query = graphql`
 	query BlogPostQuery($slug: String!) {
     contentfulBlogPost(slug: {eq: $slug }) {
       title
+      createdAt(formatString: "MMMM DD YYYY")
+      thumbnail {
+        file {
+          url
+        }
+      }
       body {
         childMarkdownRemark {
           html
